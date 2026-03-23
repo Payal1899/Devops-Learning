@@ -1,9 +1,15 @@
 1. Creating and Renaming Files/Directories
-mkdir test_dir
-cd test_dir
-touch example.txt
-mv example.txt renamed_example.txt
+mkdir test_dir  #creates directory with name test_dir
+
+cd test_dir  #Changing directory to test_dir 
+touch example.txt   #creating empty file named example.txt
+mv example.txt renamed_example.txt  #renaming the same file with mv command to renamed_example.txt
 
 
 2. Viewing File Contents
-cat /etc/passwd
+terminal@terminal-temple ~ $ ls
+Documents       Downloads       Music           Pictures        test_dir
+terminal@terminal-temple ~ $ cd test_dir
+terminal@terminal-temple test_dir $ cat renamed_example.txt
+terminal@terminal-temple test_dir $ 
+terminal@terminal-temple test_dir $ ​ 
