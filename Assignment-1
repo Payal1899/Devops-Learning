@@ -1,1 +1,9 @@
+1. Creating and Renaming Files/Directories
+mkdir test_dir
+cd test_dir
+touch example.txt
+mv example.txt renamed_example.txt
 
+
+2. Viewing File Contents
+cat /etc/passwd
