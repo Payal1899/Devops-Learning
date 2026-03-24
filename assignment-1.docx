@@ -40,49 +40,8 @@ lib.usr-is-merged  sbin
 @Payal1899 ➜ /etc $ ls
 ODBCDataSources         hosts.allow     protocols
 PackageKit              hosts.deny      python3
-X11                     init.d          python3.12
-adduser.conf            inputrc         rc0.d
-alternatives            iproute2        rc1.d
-apache2                 issue           rc2.d
-apparmor.d              issue.net       rc3.d
-apt                     kernel          rc4.d
-bash.bashrc             ld.so.cache     rc5.d
-bash_completion         ld.so.conf      rc6.d
-bash_completion.d       ld.so.conf.d    rcS.d
-bindresvport.blacklist  legal           resolv.conf
-binfmt.d                libaudit.conf   rmt
-ca-certificates         libnl-3         rpc
-ca-certificates.conf    lighttpd        rvmrc
-cloud                   locale.alias    security
-credstore               locale.conf     selinux
-credstore.encrypted     locale.gen      services
-cron.d                  localtime       sgml
-cron.daily              logcheck        shadow
-cron.weekly             login.defs      shadow-
-csh.login               logrotate.d     shells
-dbus-1                  lsb-release     skel
-debconf.conf            lynx            ssh
-debian_version          machine-id      ssl
-debuginfod              magic           subgid
-default                 magic.mime      subgid-
-deluser.conf            mailcap         subuid
-docker                  mailcap.order   subuid-
-dpkg                    manpath.config  sudo.conf
-e2scrub.conf            mime.types      sudo_logsrvd.conf
-emacs                   mke2fs.conf     sudoers
-environment             modules-load.d  sudoers.d
-ethertypes              mtab            sysctl.conf
-fish                    mysql           sysctl.d
-fonts                   nanorc          systemd
-fstab                   netconfig       terminfo
-gai.conf                networks        timezone
-gdb                     nsswitch.conf   tmpfiles.d
-gitconfig               odbc.ini        ucf.conf
-gnutls                  odbcinst.ini    ufw
-gprofng.rc              opt             update-motd.d
-groff                   os-release      vconsole.conf
-group                   pam.conf        vim
-group-                  pam.d           wgetrc
+.....
+wgetrc
 gshadow                 passwd          xattr.conf
 gshadow-                passwd-         xdg
 gss                     perl            xml
@@ -182,11 +141,11 @@ Assignment-1  index.html  secure.txt  test_dir  test_dir.zip  unzipped_dir
 
 7. Working with Environment Variables
 #Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
-
-Repo link: https://github.com/Payal1899/Devops-Learning/blob/Assignment/assignment-1.docx
-
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ export MY_VAR="Hello, Linux!"
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ printenv | grep MY_VAR
 MY_VAR=Hello, Linux!
 
+
+
+Repo link: https://github.com/Payal1899/Devops-Learning/blob/Assignment/assignment-1.docx
 
