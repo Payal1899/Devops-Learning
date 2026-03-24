@@ -186,3 +186,5 @@ Assignment-1  index.html  secure.txt  test_dir  test_dir.zip  unzipped_dir
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ export MY_VAR="Hello, Linux!"
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ printenv | grep MY_VAR
 MY_VAR=Hello, Linux!
+
+
