@@ -1,0 +1,68 @@
+1. Grade Checker
+#Took score as input and kept in variable 'Grade'
+Grade=int(input("Enter your marks\n"))
+
+#Printing grades as per defined conditions in Assignment using if else:
+if Grade>90:
+    print("A")
+elif Grade>=80:
+    print("B")
+elif Grade>70:
+    print("C")
+elif Grade>=60:
+    print("D")
+elif Grade<60:
+    print("F")
+
+
+2. Student Grades
+   
+#Creating dictionary
+Dict={}
+YN='Y'
+while YN!='N':
+    YN=input("Do you want to add new Student and grades? Y/N\n")
+    if YN=='Y':
+        #Input for student name
+        Name = input("Enter name of student: ")
+        #Input for student grade
+        grade = int(input("Enter Grades: "))
+        #Adding input to dictionary
+        Dict[Name]=grade
+    else:
+        #Input for student name
+        Name = input("Enter name of student who's grades to be modified: ")
+        if Name in Dict:
+            #Input for student grade
+            grade = int(input("Enter Grades: "))
+            #Modifying student grade in dictionary
+            Dict[Name]=grade
+        else:
+            print("Enterred student is not available")
+    YN=input("Do you want to perform anymore updates? Y/N\n")
+
+#Printing content of decitionary
+print(Dict)
+
+
+3.Write to a File
+#create new file with write mode
+with open("example.txt", "w") as file1:
+    #writes into file example.txt
+    file1.write("Hello, world!")
+    #inside with block so no need to open the file again
+    Read=file1.read() #reads the file
+    #print content of the file
+    print(Read)
+
+4.Read from a File
+#open file example.txt in read mode
+file1=open("example.txt", "r")
+#read and print the content of the file 
+print(file1.read())
+#close the file
+file1.close()
+
+
+Repo link: https://github.com/Payal1899/Devops-Learning/blob/Assignment/Assignments/Assignment-2.docx
+
