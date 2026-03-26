@@ -18,3 +18,17 @@ dict={'a':1,'b':2,'c':3,'e':20.5}
 print("Dictionary",dict['a'])
 del dict['b']
 print("Dictionary after delete",dict)
+
+
+'''
+File modes
+r:read
+w:write
+a: append
+r+:read and write
+w+:write and read
+a+: append and read
+rb: read boolean
+wb
+ab
+'''
