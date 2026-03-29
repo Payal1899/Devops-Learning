@@ -141,6 +141,12 @@ Assignment-1  index.html  secure.txt  test_dir  test_dir.zip  unzipped_dir
 
 7. Working with Environment Variables
 #Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
+<<<<<<< HEAD:Assignments/Assignment-1.docx
+=======
+
+Repo link: https://github.com/Payal1899/Devops-Learning/blob/Assignment/assignment-1.docx
+
+>>>>>>> 35eb564 (Update assignment-1.docx):assignment-1.docx
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ export MY_VAR="Hello, Linux!"
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ printenv | grep MY_VAR
 MY_VAR=Hello, Linux!
