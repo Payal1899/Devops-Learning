@@ -1,0 +1,188 @@
+1. Creating and Renaming Files/Directories
+#creates directory with name test_dir
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ mkdir test_dir
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1  test_dir
+
+#Changing directory to test_dir 
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ cd test_dir
+
+#creating empty file named example.txt
+@Payal1899 ➜ /workspaces/Devops-Learning/test_dir (Assignment) $ touch example.txt
+@Payal1899 ➜ /workspaces/Devops-Learning/test_dir (Assignment) $ ls
+example.txt
+
+#renaming the same file with mv command to renamed_example.txt
+@Payal1899 ➜ /workspaces/Devops-Learning/test_dir (Assignment) $ mv example.txt 
+renamed_example.txt
+@Payal1899 ➜ /workspaces/Devops-Learning/test_dir (Assignment) $ ls
+renamed_example.txt
+
+
+2. Viewing File Contents
+
+#Use cat to display the contents of /etc/passwd.
+
+@Payal1899 ➜ /workspaces $ cd ..
+@Payal1899 ➜ / $ ls
+bin                lib32  sbin.usr-is-merged
+bin.usr-is-merged  lib64  srv
+boot               media  sys
+dev                mnt    tmp
+etc                opt    usr
+go                 proc   var
+home               root   vscode
+lib                run    workspaces
+lib.usr-is-merged  sbin
+@Payal1899 ➜ / $ cd etc
+@Payal1899 ➜ /etc $ ls
+ODBCDataSources         hosts.allow     protocols
+PackageKit              hosts.deny      python3
+X11                     init.d          python3.12
+adduser.conf            inputrc         rc0.d
+alternatives            iproute2        rc1.d
+apache2                 issue           rc2.d
+apparmor.d              issue.net       rc3.d
+apt                     kernel          rc4.d
+bash.bashrc             ld.so.cache     rc5.d
+bash_completion         ld.so.conf      rc6.d
+bash_completion.d       ld.so.conf.d    rcS.d
+bindresvport.blacklist  legal           resolv.conf
+binfmt.d                libaudit.conf   rmt
+ca-certificates         libnl-3         rpc
+ca-certificates.conf    lighttpd        rvmrc
+cloud                   locale.alias    security
+credstore               locale.conf     selinux
+credstore.encrypted     locale.gen      services
+cron.d                  localtime       sgml
+cron.daily              logcheck        shadow
+cron.weekly             login.defs      shadow-
+csh.login               logrotate.d     shells
+dbus-1                  lsb-release     skel
+debconf.conf            lynx            ssh
+debian_version          machine-id      ssl
+debuginfod              magic           subgid
+default                 magic.mime      subgid-
+deluser.conf            mailcap         subuid
+docker                  mailcap.order   subuid-
+dpkg                    manpath.config  sudo.conf
+e2scrub.conf            mime.types      sudo_logsrvd.conf
+emacs                   mke2fs.conf     sudoers
+environment             modules-load.d  sudoers.d
+ethertypes              mtab            sysctl.conf
+fish                    mysql           sysctl.d
+fonts                   nanorc          systemd
+fstab                   netconfig       terminfo
+gai.conf                networks        timezone
+gdb                     nsswitch.conf   tmpfiles.d
+gitconfig               odbc.ini        ucf.conf
+gnutls                  odbcinst.ini    ufw
+gprofng.rc              opt             update-motd.d
+groff                   os-release      vconsole.conf
+group                   pam.conf        vim
+group-                  pam.d           wgetrc
+gshadow                 passwd          xattr.conf
+gshadow-                passwd-         xdg
+gss                     perl            xml
+host.conf               polkit-1        zsh
+hostname                profile
+hosts                   profile.d
+@Payal1899 ➜ /etc $ cat passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+messagebus:x:100:101::/nonexistent:/usr/sbin/nologin
+polkitd:x:997:997:User for polkitd:/:/usr/sbin/nologin
+codespace:x:1000:1000::/home/codespace:/bin/bash
+sshd:x:101:65534::/run/sshd:/usr/sbin/nologin
+
+#Display only the first 5 lines of /etc/passwd using head.
+@Payal1899 ➜ /etc $ head -5 passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+
+#Display only the last 5 lines of /etc/passwd using tail.
+@Payal1899 ➜ /etc $ tail -5 passwd
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+messagebus:x:100:101::/nonexistent:/usr/sbin/nologin
+polkitd:x:997:997:User for polkitd:/:/usr/sbin/nologin
+codespace:x:1000:1000::/home/codespace:/bin/bash
+sshd:x:101:65534::/run/sshd:/usr/sbin/nologin
+@Payal1899 ➜ /etc $ 
+
+3.Searching for Patterns
+#Use grep to find all lines containing the word "root" in /etc/passwd.
+@Payal1899 ➜ /etc $ cat passwd | grep root
+root:x:0:0:root:/root:/bin/bash
+@Payal1899 ➜ /etc $ 
+
+4. Zipping and Unzipping
+#Compress the test_dir directory into a file named test_dir.zip using zip.
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ zip test_dir.zip test_dir
+  adding: test_dir/ (stored 0%)
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1  test_dir  test_dir.zip
+
+#Unzip test_dir.zip into a new directory named unzipped_dir.
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1  test_dir  test_dir.zip
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ unzip test_dir.zip -d unzipped_dir
+Archive:  test_dir.zip
+   creating: unzipped_dir/test_dir/
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1  test_dir  test_dir.zip  unzipped_dir
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ cd unzipped_dir/
+@Payal1899 ➜ /workspaces/Devops-Learning/unzipped_dir (Assignment) $ ls
+test_dir
+@Payal1899 ➜ /workspaces/Devops-Learning/unzipped_dir (Assignment) $ 
+
+5. Downloading Files
+#Use wget to download a file from a URL (e.g., https://example.com/sample.txt).
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ wget https://example.com/sample.txt
+--2026-03-24 15:07:51--  https://example.com/sample.txt
+Resolving example.com (example.com)... 104.18.26.120, 104.18.27.120, 2606:4700::6812:1a78, ...
+Connecting to example.com (example.com)|104.18.26.120|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2026-03-24 15:07:52 ERROR 404: Not Found.
+
+
+6. Changing Permissions
+#Create a file named secure.txt
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ touch secure.txt
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls
+Assignment-1  index.html  secure.txt  test_dir  test_dir.zip  unzipped_dir
+
+#change its permissions to read-only for everyone using chmod.
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ chmod 444 secure.txt
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ ls -la secure.txt 
+-r--r--r-- 1 codespace codespace 0 Mar 24 15:14 secure.txt
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ 
+
+
+7. Working with Environment Variables
+#Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
+
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ export MY_VAR="Hello, Linux!"
+@Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ printenv | grep MY_VAR
+MY_VAR=Hello, Linux!
