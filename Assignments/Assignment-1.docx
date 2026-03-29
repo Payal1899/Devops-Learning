@@ -145,6 +145,4 @@ Assignment-1  index.html  secure.txt  test_dir  test_dir.zip  unzipped_dir
 @Payal1899 ➜ /workspaces/Devops-Learning (Assignment) $ printenv | grep MY_VAR
 MY_VAR=Hello, Linux!
 
-
-
 Repo link: https://github.com/Payal1899/Devops-Learning/blob/Assignment/Assignments/Assignment-1.docx
