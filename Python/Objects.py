@@ -18,6 +18,9 @@ dict={'a':1,'b':2,'c':3,'e':20.5}
 print("Dictionary",dict['a'])
 del dict['b']
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2ee52c3 (Updates)
 print("Dictionary after delete",dict)
 
 
@@ -32,7 +35,11 @@ a+: append and read
 rb: read boolean
 wb
 ab
+<<<<<<< HEAD
 '''
 =======
 print("Dictionary after delete",dict)
 >>>>>>> 11127eb (Python)
+=======
+'''
+>>>>>>> 2ee52c3 (Updates)
