@@ -17,6 +17,7 @@ print("After adding 2 again",Set)  #unique values concept
 dict={'a':1,'b':2,'c':3,'e':20.5}
 print("Dictionary",dict['a'])
 del dict['b']
+<<<<<<< HEAD
 print("Dictionary after delete",dict)
 
 
@@ -32,3 +33,6 @@ rb: read boolean
 wb
 ab
 '''
+=======
+print("Dictionary after delete",dict)
+>>>>>>> 11127eb (Python)
