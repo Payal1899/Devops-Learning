@@ -2,16 +2,20 @@
 from flask import Flask, request, render_template
 from datetime import datetime
  #request for reuest function
-app= Flask(__name__) #creating flask application
+app= Flask(__name__) #creating flask 
+
 '''
 @app.route('/') #/ means homepage
 def home():
     return 'Welcome to the home page'
 '''
-#@app.route('/second')#another page, Get method
-#def Function(name):
-#    print(name)
+'''
+@app.route('/second')#another page, Get method
+def Function(name):
+    print(name)
 #    return 'Welcome to the second page'
+'''
+
 '''
 @app.route('/second/<name>') #another page but /second wont work unless we provide /second/somename, that is post method
 def Function(name):
