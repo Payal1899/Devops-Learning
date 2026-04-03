@@ -1,5 +1,5 @@
-#Moved to Frontend and Backend Folder after microservices topic#
-#create Flask api with routes to pages, use render template to goto html Form page
+
+#create Flask api with #routes to pages, use render template to goto html Form page
 #create a html file with post method and HTML form with submit button, define action for submit to come to api page
 #Get data from user
 #create a db user in mongo db, in network access give your public ip address so that you may connect to db with this machine
@@ -8,8 +8,7 @@
 #created requirements.txt for all the required import pckgs
 #run command pip install -r requirements.txt to install all of them
 
-from flask import Flask, request, render_template
-from datetime import datetime
+from flask import Flask, request
 from dotenv import load_dotenv
 import os
 import pymongo
@@ -31,21 +30,11 @@ except Exception as e:
 
 
 app= Flask(__name__) #creating flask 
-@app.route('/')
-def first_fun():
-    return render_template('index1.html')
+
 @app.route('/submit', methods=['POST'])
 def sec_fun():
-    #name=request.form.get('name')
-    #email=request.form.get('email')
-    #return 'Hello  '+name+'!'+'!<br> Your email is '+email
-
-    #another way to print data on page
-    #dict1=dict(request.form)
-    #return 
-    
     #inserting into DB
-    dict1=dict(request.form)
+    dict1=dict(request.json)
     collection.insert_one(dict1) #inserting data into our DB using collection
     return 'Data inserted successfully'
 
@@ -70,4 +59,4 @@ def thrid_fun():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=8000, debug=True) #running frontend and backend on different ports
