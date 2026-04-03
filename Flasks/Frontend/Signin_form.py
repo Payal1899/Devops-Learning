@@ -8,7 +8,7 @@
 #created requirements.txt for all the required import pckgs
 #run command pip install -r requirements.txt to install all of them
 
-from flask import Flask, render_template, request #this is flask func
+from flask import Flask, render_template, request #request and jsonify is flask func
 import requests  #this is python lib to connect https requests
 
 Backend_URL='http://0.0.0.0:8000'
@@ -26,10 +26,10 @@ def sec_fun():
     return 'data inserted successful'
 
 
-@app.route('/view_Data') #(/view_Data is just kept to keep it similar name, you can give anything)
+@app.route('/get_Data') #(/view_Data is just kept to keep it similar name, you can give anything)
 def thrid_fun():
     response=requests.get(Backend_URL+'/view_Data') #here /view_Data is the route defind in backend
-    return response.text
+    return response.json() #provides output in json
 
 
 

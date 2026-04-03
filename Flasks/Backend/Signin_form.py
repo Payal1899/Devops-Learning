@@ -8,7 +8,7 @@
 #created requirements.txt for all the required import pckgs
 #run command pip install -r requirements.txt to install all of them
 
-from flask import Flask, request
+from flask import Flask, request,jsonify #request and jsonify is flask func
 from dotenv import load_dotenv
 import os
 import pymongo
@@ -55,7 +55,7 @@ def thrid_fun():
             #created dict dat1 and alligned key with list>'data' in our case. now we can return this dict
         }
 
-    return dat1
+    return jsonify(dat1) #providing json version of output
 
 
 if __name__ == '__main__':
