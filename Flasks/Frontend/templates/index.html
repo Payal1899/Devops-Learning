@@ -13,7 +13,7 @@
 <div class="centred"><!--we have given class name so that anything with that name will be applicable here
     as we have given styling in style section with same class name-->
 
-    <form action="/submit" method="POST"> <!-- we are puting action after user hits submit button, it will route to /submit page which is reated in flask api
+    <form action="/" method="POST"> <!-- we are puting action after user hits submit button, it will route to /submit page which is reated in flask api
         the method is post(Data is sent in the body (hidden from URL)) -->
         <label for="name">Name</label> <!--name is the arg here which we will use in flask as well-->
         <input type="text" name="name" id="name1" placeholder="Enter your name" align="center">
@@ -24,15 +24,16 @@
         <br>
         <input type="submit" value="Submit">
         
-    {% if error %}
-    <p style="color:red;">{{ error }}</p>
-    {% endif %}
+    
     </form>
 
     
 </div>
-  
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
 </body>
+
 <style>
     body{
         background-color: rgb(235, 224, 246);
