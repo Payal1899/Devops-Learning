@@ -20,3 +20,58 @@ Author: Payal1899 <payallute9@gmail.com> #from github
 Date:   Mon Apr 6 14:10:36 2026 +0000
 
     index file added
+
+
+Where is log folder:
+    index file added
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ ls -a
+.  ..  .git  Index.html  Info
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ cd .git
+@Payal1899 ➜ /workspaces/Devops-Learning/Git/.git (main) $ ls -a
+.  ..  COMMIT_EDITMSG  HEAD  config  description  hooks  index  info  logs  objects  refs
+
+
+How to remove changes from staging:
+if you have added all the files>staged but want to remove particular file from staged/save status
+git restore --staged filename
+
+after this if you commit changes it will just commit staged files
+
+Checking diffrences between the commits from logs:
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git diff 9a1c818028b21f8cf664f51c111dd10bff34c61e
+diff --git a/Info b/Info
+index 30d8cb9..ab09cc1 100644
+--- a/Info
++++ b/Info
+@@ -1,6 +1,8 @@
+ Git is software for version control of files and folders
+ github is platform to use GIT along with cloud
+ 
++U-untracked files
++M- modified files
+ 
+ @Payal1899 ➜ /workspaces/Devops-Learning/Git (Assignment) $ git init
+ Initialized empty Git repository in /workspaces/Devops-Learning/Git/.git/
+@@ -9,4 +11,30 @@ now its in Main branch
+:
+
+Removing Commits:
+You can remove earlier commits but in sequence only
+if you have 4 commits and head is on 4, you can remove 4 or 4,3 or 4,3,2 or 4321
+
+$git reset --hard commit_hash_number
+
+
+Connecting local machine Git to GitHub:
+SSH keys
+ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa.pub
+    (then copy the content)
+
+copy and paste the ssh key on Github/Gitlab
+
