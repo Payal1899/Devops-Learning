@@ -75,8 +75,8 @@ cat ~/.ssh/id_rsa.pub
 
 copy and paste the ssh key on Github/Gitlab
 
-Pushing commits:
-$ git remote add origin https://github.com/Payal1899/Devops-Learning
+Pushing commits from local to remote repo:
+$ git remote add origin https://github.com/Payal1899/Devops-Learning  #points Origin to provided remote repo
 @Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git remote -v
  $git push --set-upstream origin main
 
@@ -84,4 +84,29 @@ $ git remote add origin https://github.com/Payal1899/Devops-Learning
  and with above cmds I have local repo Git folder in Assignment branch which points to https://github.com/Payal1899/Devops-Learning as remote repo
 
 
- 
+We can do the same for Gitlab:
+$ git remote add origin-1 gitlab_repo_URL  #points Origin-1 to provided remote repo
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git remote -v #shows remote repo
+ $git push --set-upstream origin-1 main #pushed commits from local main to remote repo
+
+
+Branches:
+ @Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git branch -a
+* main
+  remotes/origin/main
+
+  Output says, there is 1 branch local main with * means currently in use, another remote for main remotes/origin/main.
+
+
+  Creating new Branch:
+  git branch branch_name
+   Switching to new branch
+   git switch branch_name
+
+
+   git checkout -b branch_name # creates branch and switch to it
+
+
+   these Branches get created on remote and not locally
+   so in order to put it in local you need to do git pull
+   
