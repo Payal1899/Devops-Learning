@@ -75,3 +75,13 @@ cat ~/.ssh/id_rsa.pub
 
 copy and paste the ssh key on Github/Gitlab
 
+Pushing commits:
+$ git remote add origin https://github.com/Payal1899/Devops-Learning
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git remote -v
+ $git push --set-upstream origin main
+
+ Now I have created another repo inside GIT folder on Assignment branch as earlier I ran cmd git init, so any folder with .git folder is GIT repo
+ and with above cmds I have local repo Git folder in Assignment branch which points to https://github.com/Payal1899/Devops-Learning as remote repo
+
+
+ 
