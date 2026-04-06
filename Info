@@ -1,0 +1,12 @@
+Git is software for version control of files and folders
+github is platform to use GIT along with cloud
+
+
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (Assignment) $ git init
+Initialized empty Git repository in /workspaces/Devops-Learning/Git/.git/
+now its in Main branch
+
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ touch Index.html
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git add . #this is staging of changes
+@Payal1899 ➜ /workspaces/Devops-Learning/Git (main) $ git status
+
