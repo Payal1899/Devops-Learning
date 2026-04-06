@@ -109,4 +109,13 @@ Branches:
 
    these Branches get created on remote and not locally
    so in order to put it in local you need to do git pull
-   
+
+   when you do $git push --set-upstream origin branch_name, it pushed changes from branch_name to main as origin is pointing to remote repo for main
+
+   now if you want branch_name should be local repo as well, switch to branch_name and do $git pull
+
+Merging branches to main:
+below command to be run from main 
+   $git merge branch_name
+   now if you do git push 
+   it will add the changes from branch_name to main
