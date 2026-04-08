@@ -119,3 +119,8 @@ below command to be run from main
    $git merge branch_name
    now if you do git push 
    it will add the changes from branch_name to main
+
+
+Forking:
+
+You can copy the repo from other account using Fork option, 
