@@ -1,0 +1,56 @@
+its a pckg
+container to move on any machine
+open source
+no GUI
+********************
+Install docker need apt
+cmd: apt install docker.io
+docker --version
+if sudo permission needs>>post installation steps docker will help to remove need of sudo
+
+Docker Pull:
+$docker pull image_name
+~downloads the container for that image_name
+
+Docker images:
+$docker images
+~shows images downloaded on local system
+
+Docker run:
+$docker run image_name
+~runs image_name
+
+$docker run -it image_name
+~runs image_name and interactive + attach to terminal, it takes us to container id in terminal
+now we are on container id.
+many cmds dont work inside this as it loads basic image and not all the utilities
+from this terminal at container ID(which means we are inside VM), run #apt update
+
+Docker ps:
+$docker ps image_name
+~lists running image_name
+
+-a options shows: past runs
+
+Docker stop:
+$docker stop container_id
+~stops running container_id
+
+Docker start:
+$docker start container_id
+
+***************************
+accesing docker container with port mapping
+
+docker run -it -p 7790:80 nginx
+docker run -it -p internal(Local)_port:external_port nginx
+7790 = port on your computer (host)
+80 = port inside the container (NGINX runs here)
+👉 So visiting http://localhost:7790 opens the NGINX server.
+nginx
+The Docker image to run (a web server).
+
+**********************
+docker logs container_id
+shows logs for container id
+
