@@ -30,7 +30,15 @@ Docker ps:
 $docker ps image_name
 ~lists running image_name
 
--a options shows: past runs
+-a options shows: past runs, stopped images
+
+i)docker ps -aq
+ii)docker rm $(docker ps -aq)
+check stopped imges, q means only container_id
+then remove all those container_id
+
+docker image prune
+WARNING! This will remove all dangling images, images which were build previously and having tag none also none id
 
 Docker stop:
 $docker stop container_id
@@ -53,4 +61,33 @@ The Docker image to run (a web server).
 **********************
 docker logs container_id
 shows logs for container id
+
+docker exec -it container_id command_to_run 
+This allows to run command from outside to docker container
+so basically you mapped your local machine port to docker container port and from your local machine terminal now executing command inside docker container terminal
+
+ex : docker exec -it container_id cat names.txt
+it shows names.txt file content from that container_id
+
+
+Docker inspect:
+docker inspect container_id
+gives info about container
+
+***************************
+Creating Docker image
+
+1)Docker file
+blueprint for container
+create docker file, give lib, file and filepath, and command to run
+
+
+in terminal> docker build -t python-first-image .
+docker build>builds image
+-t> tag followed by image name, tag is version of image by default it is 'latest'
+.>current dir(it should be dir where dockerfile exist)
+~hence docker image created
+
+docker run python-first-image
+~runs our image
 
