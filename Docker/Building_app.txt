@@ -1,0 +1,18 @@
+ $npm init -y
+ to initiate packg in node js in frontend folder
+
+ $npm install express
+ installs express module which is used in frontend
+
+$ npm start  --this starts our node js packg
+
+> frontend@1.0.0 start
+> node app.js
+
+Ares listening on port 3000!
+ 
+
+$npm install node-fetch
+$npm install ejs
+
+dockerignore file: ignores the module which is need not to include in docker packg
