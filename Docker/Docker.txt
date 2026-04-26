@@ -93,3 +93,5 @@ docker run python-first-image
 
 docker run python-first-image:V2
 ~runs docker image with tag V2
+********************************
+
