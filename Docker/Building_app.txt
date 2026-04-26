@@ -1,8 +1,11 @@
  $npm init -y
  to initiate packg in node js in frontend folder
+ creates package.json
 
  $npm install express
  installs express module which is used in frontend
+ creates package-lock.json, this name we have paased I think, not able to recall
+
 
 $ npm start  --this starts our node js packg
 
@@ -10,9 +13,58 @@ $ npm start  --this starts our node js packg
 > node app.js
 
 Ares listening on port 3000!
- 
+
+
+~~ now if you create another app.js file, lets say app_copy.js and want to run this app.js then you need to modify package.json
 
 $npm install node-fetch
 $npm install ejs
 
 dockerignore file: ignores the module which is need not to include in docker packg
+
+
+*****************
+what I did 
+in Docker, inside Frontend folder created app.js, frontend file is in public folder>index.html
+/api
+
+second:
+backend> we have app.py using simple flask api />shows default msg and /api shows list of names which is stored in names.txt using Business.py
+
+**************************************
+now building full fledged microservice app
+
+
+in Frontend
+app_copy.js
+package.json
+package-lock.json
+views>index.ejs
+
+in Backend folder:
+app.py
+names.txt
+requirements.txt
+Business.py
+
+
+in main Docker folder:
+Dockerfile-backend
+Dockerfile-frontend
+.dockerignore
+
+we created all these files
+
+now when we build the image and run
+docker build -t microservices-backend -f Dockerfile-backend .
+docker build -t microservices-frontend -f Dockerfile-frontend .
+docker run -it microservices-backend
+docker run -it microservices-frontend
+~it is running as docker image and inside docker terminal so need to map to port
+docker run -it -p 9000:6000  microservices-backend
+~port number mentioned in external port number:docker image(mentioned in app.py in Backend folder)
+docker run -it -p 8000:3000 microservices-frontend
+~port number 3000 is from app_copy.js file
+
+now the app works for backend with external port but not connected to frontend as it needs to be on same network
+

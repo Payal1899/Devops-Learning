@@ -1,0 +1,7 @@
+FROM node:16-alpine
+ENV Backend_URL=http://0.0.0.0:8000
+ADD Frontend /api
+WORKDIR /api
+RUN npm install
+ENTRYPOINT ["npm"]
+CMD ["start"]
