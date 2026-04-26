@@ -1,3 +1,4 @@
+//Ares Application - Frontend
 //exress app that serves html files
 var express = require('express');
 var app = express();

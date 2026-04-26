@@ -91,3 +91,5 @@ docker build>builds image
 docker run python-first-image
 ~runs our image
 
+docker run python-first-image:V2
+~runs docker image with tag V2
