@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
-ADD Backend/requirements.txt /microservice/requirements.txt
+ADD requirements.txt /microservice/requirements.txt
 RUN pip install -r /microservice/requirements.txt
-ADD Backend /microservice
+ADD . /microservice
 WORKDIR /microservice
 ENTRYPOINT ["python"]
 CMD ["app.py"]

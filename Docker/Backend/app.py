@@ -15,12 +15,13 @@ for detailed understanding of the code, please refer to Building_app.txt file in
 '''
 
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from Business import get_data
 app = Flask(__name__)
 @app.route('/')
 def hello_world():
-    return "Hello Payal From docker Flask app"
+    return 'Hello, World!'
+    #return render_template('index.html')
 
 @app.route('/api', methods= ['GET'])
 def api():
@@ -36,4 +37,4 @@ def api():
 
 
 if __name__== '__main__':
-    app.run(port=6000,host='0.0.0.0', debug=True)
+    app.run(port=6001,host='0.0.0.0', debug=True)

@@ -3,22 +3,26 @@ version: "3.6"
 services:
 
   backend:
-    build: Backend
+    build:
+      context: Backend
+      dockerfile: ./Dockerfile-backend
     hostname: backend-host-payal
     volumes:
-      - ./backend:/app
+      - ./Backend:/app
     ports:
-      - "8000:8000"
+      - "8000:6001"
     networks:
       - my-network
 
   frontend:
-    build: Frontend
+    build:
+      context: Frontend
+      dockerfile: ./Dockerfile-frontend
     hostname: frontend-host-payal
     volumes:
-      - ./frontend:/app
+      - ./Frontend:/app
     environment:
-      - BACKEND_URL=http://backend-host-payaldocker:8000/api
+      - BACKEND_URL=http://backend-host-payal:8000/api
     ports:
       - "3000:3000"
     links:
