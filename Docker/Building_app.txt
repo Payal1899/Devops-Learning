@@ -68,3 +68,10 @@ docker run -it -p 8000:3000 microservices-frontend
 
 now the app works for backend with external port but not connected to frontend as it needs to be on same network
 
+we need docker compose
+docker compose allows to write yaml file
+there are 2 portions
+backend and frontend
+B : give folder name in Backend portion, hostname, volume, ports
+
+docker-compose up
