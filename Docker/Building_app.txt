@@ -76,3 +76,4 @@ provided network name
 
 
 docker-compose build --no-cache
+Upto now backend working, frontend need to fix
