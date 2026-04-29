@@ -67,4 +67,12 @@ docker run -it -p 8000:3000 microservices-frontend
 ~port number 3000 is from app_copy.js file
 
 now the app works for backend with external port but not connected to frontend as it needs to be on same network
+we need docker compose
+added Docker compose file
+moved docker file to each folder
+and provided context as folder name and dockerfile name in yaml file
+provided host name
+provided network name
 
+
+docker-compose build --no-cache
