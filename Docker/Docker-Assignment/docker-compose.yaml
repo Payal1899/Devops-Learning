@@ -1,0 +1,36 @@
+version: "3.6"
+
+services:
+
+  backend:
+    build:
+      context: Backend
+      dockerfile: ./Dockerfile-backend
+    hostname: backend-host-payal
+    volumes:
+      - ./Backend:/app
+    ports:
+      - "8000:6001"
+    networks:
+      - my-network
+
+  frontend:
+    build:
+      context: Frontend
+      dockerfile: ./Dockerfile-frontend
+    hostname: frontend-host-payal
+    volumes:
+      - ./Frontend:/api
+    environment:
+      - BACKEND_URL=http://backend-host-payal:6001/api
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - my-network
+
+networks:
+  my-network: {}
