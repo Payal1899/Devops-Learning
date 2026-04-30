@@ -28,12 +28,12 @@ def api():
     data=get_data()
     #calling get_data function from Business.py file
 
-    '''creating a dictionary to return data in json format to the frontend
+    '''creating a dictionary to return data in json format to the frontend '''
     names={
         'Key':data
     }
-    '''
-    return jsonify(data)
+   
+    return jsonify(names)
 
 
 if __name__== '__main__':
