@@ -37,6 +37,9 @@ ii)docker rm $(docker ps -aq)
 check stopped imges, q means only container_id
 then remove all those container_id
 
+docker rmi $(docker images -q) -f
+will remove all the images
+
 docker image prune
 WARNING! This will remove all dangling images, images which were build previously and having tag none also none id
 
@@ -94,4 +97,22 @@ docker run python-first-image
 docker run python-first-image:V2
 ~runs docker image with tag V2
 ********************************
+hub.docker.com
+now whatever build in Building.txt
+push to hub.docker.com
 
+in hub.docker.com
+create repo 
+payallute/docker-backend, here we haven;t added any tag
+
+from codespace
+docker push payallute/docker-backend:latest, here docker-backend is name of container we get after docker-compose up
+there are 2 issues, codepsace dont have access to hub.docker and tag also
+dockerhub expects username/repo:tag
+
+$docker tag docker-backend payallute/docker-backend, payallute/docker-backend is repo in dockerhub
+now we see one more image with name payallute/docker-backend with tag latest
+now do docker login, provide id psw and then below cmd works
+$docker push payallute/docker-backend:latest
+
+same to frontend

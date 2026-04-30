@@ -99,5 +99,5 @@ $docker-compose build --no-cache
 below to remove compose
 $docker-compose down
 
-Everything working now, and we cannot access as localhost:6001 cause we are in codespace so use forwarded ports link
+Everything working now, building everything at once, and we cannot access as localhost:6001 cause we are in codespace so use forwarded ports link
 
