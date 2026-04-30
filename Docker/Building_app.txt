@@ -65,7 +65,7 @@ docker run -it -p 9000:6000  microservices-backend
 ~port number mentioned in external port number:docker image(mentioned in app.py in Backend folder)
 docker run -it -p 8000:3000 microservices-frontend
 ~port number 3000 is from app_copy.js file
-
+************************************************
 now the app works for backend with external port but not connected to frontend as it needs to be on same network
 we need docker compose
 added Docker compose file
@@ -73,7 +73,31 @@ moved docker file to each folder
 and provided context as folder name and dockerfile name in yaml file
 provided host name
 provided network name
+volumes: very imp, it should be same as WORKDIR mentioned in dockerfile
+port: dockercontainer:localsystem
 
+in frontend section
+Env var name should be same what we used in app_copy
 
-docker-compose build --no-cache
-Upto now backend working, frontend need to fix
+Changes we made:
+in Backend>app.py, changed port to 6001 as 6000 was blocked
+added Dockerfile, since we have already set path in yaml file just need to map files to /microservice, check old file to understand microservice
+
+In Frontend> index.ejs, the variable should be Key and not the dict passed
+app_copy.js: const URL = process.env.BACKEND_URL || 'https://localhost:6001/api';
+Dockerfile removed updates are in backend old Dockerfile
+
+then run below to check running docker compose images
+$docker-compose ps
+
+below to run the compose
+$docker-compose up
+
+below if cache to be cleared
+$docker-compose build --no-cache
+
+below to remove compose
+$docker-compose down
+
+Everything working now, and we cannot access as localhost:6001 cause we are in codespace so use forwarded ports link
+
