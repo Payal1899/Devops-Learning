@@ -2,34 +2,42 @@
 //exress app that serves ejs files
 var express = require('express');
 var app = express();
-
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-const URL = process.env.BACKEND_URL || 'https://localhost:6001/submit';
+const URL = process.env.BACKEND_URL;
 
 const fetch = (...args) =>
   import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-app.get('/', async function(req, res) {
-  const options = {
-    method: 'POST'
-  };
+app.get('/', (req, res) => {
+  res.render('index', { submittedData: null });
+});
 
-  fetch(URL, options)
-    .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.error('error: ' + err));
-
+app.post('/submit', async function(req, res) {  
+  console.log("FORM DATA:", req.body);
   try {
-    let response = await fetch(URL, options);
-    response = await response.json();
-    res.render('index', response);
+    const response = await fetch(process.env.BACKEND_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(req.body)
+    });
+
+    const data = await response.json();
+
+    res.render('index', { submittedData: req.body });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ msg: 'Internal Server Error.' });
+    res.status(500).send("Error submitting form");
   }
 });
 
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
 app.listen(3000, function() {
-  console.log('Ares listening on port 3000!');
+  console.log('Frontend app listening on port 3000!');
 });

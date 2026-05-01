@@ -27,8 +27,14 @@
         <input type="submit" value="Submit">
    
     </form>
-    
+<% if (submittedData) {
+ %> <h3>Submitted Data:</h3> 
+ <p>Name: <%= submittedData.name %></p> 
+ <p>Email: <%= submittedData.email %></p> 
+ <% 
+} %>
 </body>
+
 <style>
     body {
         background-color: #000;

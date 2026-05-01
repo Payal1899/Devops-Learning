@@ -21,8 +21,9 @@ services:
     hostname: frontend-host-payal
     volumes:
       - ./Frontend:/api
+      - /api/node_modules
     environment:
-      - BACKEND_URL=http://backend-host-payal:6001/api
+      - BACKEND_URL=http://backend-host-payal:6001/submit
     ports:
       - "3000:3000"
     links:

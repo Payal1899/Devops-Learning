@@ -7,18 +7,19 @@ load_dotenv() #calling function to load uri stored in .env file
 MONGO_URI = os.getenv('uri') # same variable which is passed in .env file
 client = pymongo.MongoClient(MONGO_URI)#created a client by providing the URI
 
-db = client.ADocker #created DB named 'Assignment2' in cluster name mentioned in URI
+db = client.AssignmentDocker #created DB named 'AssignmentDocker' in cluster name mentioned in URI
 
-collection = db['AsDocker']#created collection named 'Assignment'
+collection = db['AssignmentDocker']#created collection named 'AssignmentDocker'
 
 app= Flask(__name__) #creating flask api
 
 @app.route('/submit', methods=['POST'])
 def sec_fun():
     #inserting into DB
-    dict1=dict(request.json)
-    collection.insert_one(dict1)
+    data = request.form.to_dict()
+    collection.insert_one(data)
+    return {"msg": "Data inserted successfully"}
         
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=6001, debug=True) #running frontend and backend on different ports
+    app.run(host='0.0.0.0',port=6001, debug=True) 
