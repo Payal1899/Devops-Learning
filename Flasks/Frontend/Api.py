@@ -20,4 +20,4 @@ def sec_fun():
     return 'Data submitted successfully'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=6000, debug=True)  #running frontend and backend on different ports
+    app.run(host='0.0.0.0',port=600, debug=True)  #running frontend and backend on different ports
