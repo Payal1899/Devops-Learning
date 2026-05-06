@@ -1,0 +1,28 @@
+Compute:
+EC2
+Elastic beanstalk
+lambda
+Elastic container services
+Elastic container registry
+Elastic kubernetes services
+
+Storage:
+S3
+Elastic block Storage
+Elastic File System
+Glacier
+
+DB:
+RDS
+dynamoDB
+redshift
+elasticache
+
+Create IAM user in AWS:
+
+https://289297433932.signin.aws.amazon.com/console
+
+do $aws configure in codespace cli
+and provode all the needed data
+check with below cmd
+ $ aws s3 ls
