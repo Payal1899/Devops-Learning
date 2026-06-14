@@ -26,3 +26,8 @@ do $aws configure in codespace cli
 and provode all the needed data
 check with below cmd
  $ aws s3 ls
+
+ AWS S3 Bucket-simple storage service
+ 1 storage lmitations X
+ 2 Public URLS
+ 3. we can manage programatically
