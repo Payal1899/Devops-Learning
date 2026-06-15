@@ -31,3 +31,9 @@ check with below cmd
  1 storage lmitations X
  2 Public URLS
  3. we can manage programatically
+
+
+SDK: Software devl kit
+: Python pckg (Boto3 in AWS)
+we installed boto3
+we created new app.py and write code to get all the Bucket from our account, as we have already configured AWS CLI it knows from which account to fetch data
