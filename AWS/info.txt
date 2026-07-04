@@ -37,3 +37,9 @@ SDK: Software devl kit
 : Python pckg (Boto3 in AWS)
 we installed boto3
 we created new app.py and write code to get all the Bucket from our account, as we have already configured AWS CLI it knows from which account to fetch data
+Boto3 by default knows to see for aws cli config and cred file to fetch account
+
+However configuring AWS CLI >>Bad practice
+instead define creds in code, but this is also bad one>>go for .env file
+
+
