@@ -22,8 +22,8 @@ first is public url path only folder portion from aws, second one i.e. test.txt 
 #Defining creds in code
 import boto3
 
-ACCESS_KEY_ID = 'AKIAZY65GL3LEKJZZWFD'
-SECRET_ACCESS_KEY = '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'
+ACCESS_KEY_ID = 'xyz'
+SECRET_ACCESS_KEY = 'xyz'
 
 s3 = boto3.resource(
     's3',
