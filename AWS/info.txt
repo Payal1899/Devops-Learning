@@ -42,4 +42,8 @@ Boto3 by default knows to see for aws cli config and cred file to fetch account
 However configuring AWS CLI >>Bad practice
 instead define creds in code, but this is also bad one>>go for .env file
 
+**Parameter store**
+.env file in aws called Parameter store, its like storing .env file to aws instead of local machine
+
+its a sub service of ssm(system service manager)
 
