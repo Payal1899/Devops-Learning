@@ -27,6 +27,9 @@ and provode all the needed data
 check with below cmd
  $ aws s3 ls
 
+cat ~/.aws/credentials>>to view the configuration creds
+aws configure list >> to check the config profiles
+
  AWS S3 Bucket-simple storage service
  1 storage lmitations X
  2 Public URLS
@@ -46,4 +49,14 @@ instead define creds in code, but this is also bad one>>go for .env file
 .env file in aws called Parameter store, its like storing .env file to aws instead of local machine
 
 its a sub service of ssm(system service manager)
+# region name should be the one where param is created and not the one used for aws config profile
+#this line created boto3 client of AWS service ssm, provided key id's and region for the resource, our resource i.e. parameter store is in us east region
+#parameter store are regional
 
+* Public URLS
+we can make our bucket public and then data inside, maybe files and folders can be public.
+
+*AWS Cloud shell
+its is AWS CLI which is configured here on local this is on AWS Cloud
+
+*AWS EC2(Elastic Compute Cloud)
