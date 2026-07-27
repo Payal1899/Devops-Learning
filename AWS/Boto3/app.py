@@ -38,7 +38,6 @@ for bucket in s3.buckets.all():
 
 #Defining .env for creds in code
 import boto3
-
 from dotenv import load_dotenv
 import os
 load_dotenv()
