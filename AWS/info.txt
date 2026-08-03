@@ -47,6 +47,10 @@ instead define creds in code, but this is also bad one>>go for .env file
 
 **Parameter store**
 .env file in aws called Parameter store, its like storing .env file to aws instead of local machine
+When created .env and added creds to it, aws sent the alert as creds available publicly as the profile is public
+hence as we have already configured aws cli here, we are getting creds from aws cli while performing any action.
+moreover to remove alerts .env was deleted and gitignore created for any trace left, also the commit was removed
+
 
 its a sub service of ssm(system service manager)
 # region name should be the one where param is created and not the one used for aws config profile
