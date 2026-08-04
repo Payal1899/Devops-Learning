@@ -64,3 +64,12 @@ we can make our bucket public and then data inside, maybe files and folders can 
 its is AWS CLI which is configured here on local this is on AWS Cloud
 
 *AWS EC2(Elastic Compute Cloud)
+we launched EC2 instance, choose ubuntu free available image and created key pair
+For key pair we chose RSA (pvt and public key encry), pvt key file format>.pem(use with openssh for linux) other option is .ppk(putty for windows)
+put this into Boto3 folder, if we loose this file EC2 instace will be losted
+Network Setting>Security group: filters access to port on basis of IP address(similar to NSG in azure)
+so we created new sec group now, we are defining ssh traffic if we give all 0.0.0.0 anyone with .pem file can login to server(We choose my ip)
+
+Configure settings: 10 cpu and gp2 GiB, file system None
+Advance details>skipped
+done launce instace
