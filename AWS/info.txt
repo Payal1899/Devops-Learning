@@ -68,8 +68,53 @@ we launched EC2 instance, choose ubuntu free available image and created key pai
 For key pair we chose RSA (pvt and public key encry), pvt key file format>.pem(use with openssh for linux) other option is .ppk(putty for windows)
 put this into Boto3 folder, if we loose this file EC2 instace will be losted
 Network Setting>Security group: filters access to port on basis of IP address(similar to NSG in azure)
-so we created new sec group now, we are defining ssh traffic if we give all 0.0.0.0 anyone with .pem file can login to server(We choose my ip)
+so we created new sec group now, we are defining ssh traffic if we give all 0.0.0.0 anyone with .pem file can login to server(We choose my ip,So if you opened AWS from your laptop, it detects your laptop/network's public IP.Once created dont forget to modify this with your codespace ip)
+Command to know codespace ip: curl -4 https://ifconfig.me
 
 Configure settings: 10 cpu and gp2 GiB, file system None
 Advance details>skipped
 done launce instace
+Invound-set to port 22 and own ip(codespace)
+Outbound- all
+
+How to connect:
+1. Open an SSH client
+2. Locate or download your private key file(.pem file) in git we have already added that
+3. Ensure your key is not publicly viewable(setting write permissions)
+run below in local machine(codespace)
+chmod 400 "Course.pem"
+4. Connect to your instance using its Public DNS(run below from codespace)(-i for identity)
+ssh -i "Course.pem" ubuntu@ec2-3-90-218-5.compute-1.amazonaws.com
+now as the codespace ip address is changing with each session we need to modify ip in inbound rule every time we are connecting ec2 instance.
+
+
+Now deployment:
+codespace to Cloud, we have 2 option: SCP(Secure copy) and GIT
+
+1)scp -r -i "Course.pem" /workspaces/Devops-Learning/Docker/Backend ubuntu@3.90.218.5:~/backend
+-r for recursive as we are copying all files from folder
+source folder >> cloud with new folder name
+2)git
+Goto git repo, copy the https url for your entire app folder, we are using Docker folder here.
+git clone --no-checkout https://github.com/Payal1899/Devops-Learning.git (as Docker is inside folder in Repo, we dont get https url for it, hence we are just copying and not downloading the files in EC2(no checkout option))
+cd Devops-Learning (changing to our repo)
+git sparse-checkout init --cone (telling git to use sparse checkout easily --cone)
+git sparse-checkout set Docker (setting the folder to be checked out to Docker)
+git checkout (final checkout)
+
+This only copying Docker folder
+
+Now if we dont have public repo, the clone will fail after proving git creds also
+fix it in git repo by authenticating EC2 instace
+
+Goto codespace, and create new git key(explained in git tutorial)
+copy the git key and come to git repo want to use
+in settings >deploy key>add deploy key>allow write access
+but this will only be for that repo, if want to apply for entire git account
+Git account>settings>ssh keys
+
+Running our app:
+as we have already copied the app, navigate to directory and run it from EC2 instance connected to codespace
+However flask is not available here and other requirements also
+hence run sudo apt update(does not install or upgrade anything. It just gets the latest information about available packages from Ubuntu's repositories.) .
+
