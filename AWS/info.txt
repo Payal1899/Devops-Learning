@@ -117,4 +117,17 @@ Running our app:
 as we have already copied the app, navigate to directory and run it from EC2 instance connected to codespace
 However flask is not available here and other requirements also
 hence run sudo apt update(does not install or upgrade anything. It just gets the latest information about available packages from Ubuntu's repositories.) .
+pip install Python3
+this installs pyth3 only, for creating virtual env venv we need to install venv package of python so that we can install flask from requirements.txt
+sudo apt update
+sudo apt install python3.14-venv
+rm -rf venv
+python3 -m venv venv(v env path)
+source venv/bin/activate
+pip install -r requirements.txt
+
+Now run your app.py file, it is running but the port on which it is running is blocked in our server
+set inbound rule for port in our case 6001, allow traffic from any ip
+
+hence now your app is on internet not anymore on local machine
 
