@@ -128,6 +128,39 @@ pip install -r requirements.txt
 
 Now run your app.py file, it is running but the port on which it is running is blocked in our server
 set inbound rule for port in our case 6001, allow traffic from any ip
-
+however still we need to manually change public ip of EC2 in url when running.
 hence now your app is on internet not anymore on local machine
 
+Now if you do any changes to Docker folder on github, connect to instace and do git pull, all the changes will reflect there.
+
+Now to fix IP part: Ingress-Reverse proxy
+Browser sends HTTP/HTTPS request → request reaches the Ingress Controller → controller examines the host/path → chooses the appropriate Kubernetes Service → Service sends traffic to the appropriate Pod(s).
+
+Http req: 
+GET /products
+Host: shop.example.com
+||
+Ingress: 
+Host: shop.example.com
+Path: /products
+||
+shop.example.com  →  shop-service
+blog.example.com  →  blog-service
+
+Nginx - perfect(we will use it as ingress controller)
+Apache - very old
+Traefix -very new
+ To install Nginx: inside ec2> sudo apt install nginx
+check if installed: systemctl status nginx
+
+check all ports running : 
+lsof
+sudo lsof -i -P -n
+sudo lsof -i -P -n | grep LISTEN
+nginx by defaukt run on port 80
+
+http://localhost:80===localhost, as default protocol is http and default port is 80
+
+now if you stop nginx: sudo systemctl stop nginx, localhost alone wont work
+started back nginx and checked curl localhost>>working inside server but not on Browser
+so add inbound rule>>port 80 from anywhere>it works from browserver now
