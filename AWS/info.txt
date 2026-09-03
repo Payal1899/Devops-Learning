@@ -226,3 +226,7 @@ reload ngnix
 now if we put front.payal.com it goes to frontend cause the Reverse proxy is working through port 80 which is added in inbound rule
 no need to add 9000 port in inbound rule
 
+ECR(Elastic container registry)
+:
+repositories create ECR 
+inside repositories we have images
