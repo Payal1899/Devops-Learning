@@ -84,7 +84,7 @@ How to connect:
 run below in local machine(codespace)
 chmod 400 "Course.pem"
 4. Connect to your instance using its Public DNS(run below from codespace)(-i for identity)
-ssh -i "Course.pem" ubuntu@ec2-3-90-218-5.compute-1.amazonaws.com
+ssh -i "Course.pem" ubuntu@ec2-54-90-226-244.compute-1.amazonaws.com
 now as the codespace ip address is changing with each session we need to modify ip in inbound rule every time we are connecting ec2 instance.
 
 
@@ -164,3 +164,65 @@ http://localhost:80===localhost, as default protocol is http and default port is
 now if you stop nginx: sudo systemctl stop nginx, localhost alone wont work
 started back nginx and checked curl localhost>>working inside server but not on Browser
 so add inbound rule>>port 80 from anywhere>it works from browserver now
+
+Hosting app by implementing Reverse proxy
+when you run the app.py and do ctrl C it stops working, so to keep it running in background use nohup (linux utility)
+it takes output from command and puts in file
+nohup python3 app.py &
+"&" for keeping it in background, next we run sudo lsof -i -P -n | grep LISTEN to see all running apps and we see our app still running
+to kill it>>kill -9 pid 
+check nohup.out for logs>>cat nohup.out
+
+cat default from path /etc/nginx/sites-enabled
+created below file as Course
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name payal.com;
+
+       root /var/www/example.com;
+       index index.html;
+
+       location / {
+               proxy_pass http://localhost:6001;
+       }
+}
+
+this is default syntax for nginx
+now in dns add A record for aws instace ip address named payal.com(not possible on local machine as need to own payal.com domain in dns)
+now if you put payal.com in Browser it shows nginx default page
+before that do sudo systemctl reload nginx 
+cd ~
+now if you want to do same for frontend 
+nohup python3 frontend.py &
+cd /etc/ngnix/sites-enabled
+sudo vim Course
+add the content at the end
+
+server {
+       listen 80;
+       listen [::]:80;
+
+       server_name front.payal.com;
+
+       root /var/www/example.com;
+       index index.html;
+
+       location / {
+               proxy_pass http://localhost:9000;
+       }
+}
+
+now go to dns>payal.com>add A record front.payal.com with same aws EC2 instance ip
+
+reload ngnix
+now if we put front.payal.com it goes to frontend cause the Reverse proxy is working through port 80 which is added in inbound rule
+no need to add 9000 port in inbound rule
+
